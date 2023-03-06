@@ -1,0 +1,19 @@
+body {
+    background-color: orange;
+  }
+
+  tr, td, th {
+    border: 1px solid #000000;
+   }
+   
+   
+  #coord input {
+    float: right;
+    margin-right: 70%;
+   } 
+
+
+
+  .list1 {
+    color: blue;
+  }

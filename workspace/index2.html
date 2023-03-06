@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link href="https://cdn-icons-png.flaticon.com/512/1216/1216733.png" rel="icon" type="image/png">
+<link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableaux | HTML 5</title>
+</head>
+
+<body>
+<ol type="A" class="list1">
+    <li>Souris</li>
+    <li>Chien</li>
+     <ol type="a">
+        <li>Bassets</li>
+        <li>Caniches</li>
+     </ol>
+        <li>Félin</li>
+          <ol type="1">
+            <li>Lion</li>
+            <li>Tigre</li>
+            <li>Chat</li>
+            <ol type="I">
+                <li>Chat sauvage</li>
+                <li>Chat domestique</li>
+            </ol>
+        </ol>
+    <li>Chevaux</li>
+</ol>
+
+<br>
+<br>
+<br>
+<br>
+
+<ul>
+    <li>Souris</li>
+    <li>Chien</li>
+      <ul>
+        <li>Bassets</li>
+        <li>Caniches</li>
+      </ul>
+        <li>Félin</li>
+          <ul>
+            <li>Lion</li>
+            <li>Tigre</li>
+            <li>Chat</li>
+              <ul>
+                <li>Chat sauvage</li>
+                <li>Chat domestique</li>
+              </ul>
+        </ul>
+    <li>Chevaux</li>
+</ul>
+
+<br>
+<hr>
+<br>
+
+<table>
+  <caption>Ventes T1</caption>
+ <thead>
+  <tr>
+  <th colspan="4">Ventes du 1<sup>er</sup> trimestre</th>
+  <th> - </th>
+  <th>Janvier</th>
+  <th>Février</th>
+  <th>Mars</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+  <td>Pierre</td>
+  <td>65 800</td>
+  <td>53 200</td>
+  <td>46 400</td>
+  </tr>
+  <tr>
+  <td>Paul</td>
+  <td>88 000</td>
+  <td>51 500</td>
+  <td>62 300</td>
+  </tr>
+  <tr>
+  <td rowspan="2">Jacques</td>
+  <td>74 400</td>
+  <td>64 200</td>
+  <td>78 900</td>
+  </tr>
+ </tbody>
+ <tfoot>
+  <tr>
+  <td>Total</td>
+  <td>228 200</td>
+  <td>168 900</td>
+  <td>187 600</td>
+  </tr>
+ </tfoot>
+</table>
+
+<br>
+<hr>
+<br>
+<h2 style="text-align: center;">Nous lançon une grande enquête sur les anciens stagiaires</h2>
+<p style="text-align: center;"><b>merci de nous répondre</b></p>
+
+<fieldset id="coord">
+  <legend>Coordonnées :</legend>
+  <p><label for="nom">Nom: </label><input type="text" name="nom" id="nom"></p>
+  <p><label for="prenom">Prénom: </label><input type="text" name="prenom" id="prenom"></p>
+  <p><label for="date">Date de naissance: </label><input type="date" name="date" id="date"></p>
+  <p><label for="addresse">Addresse: </label><input type="text" name="addresse" id="addresse"></p>
+  <p><label for="ville">Ville: </label><input type="text" name="ville" id="ville"></p>
+  <p><label for="codePostale">Code Postale: </label><input type="text" name="codePostale" id="codePostale"></p>
+  <p><label for="mail">Mail: </label><input type="text" name="mail" id="mail"></p>
+  </fieldset>
+  <br><br>
+<fieldset>
+  <label for="homme">vous êtes un homme: </label><input type="radio" name="homme" value="homme">
+  <label for="femme">vous êtes une femme: </label><input type="radio" name="femme" value="femme">
+</fieldset>
+<br><br>
+<select name="dev">
+  <option value="dev">Développeur</option>
+  <option value="chomeur">Chômeur</option>
+  </select>
+  <p><label for="autre">si vous avez répondu autre, précisez: </label><input type="text" name="autre" id="autre"></p>
+  <select name="salaire">
+    <option value="salaire" size> < 1000 €  </option>
+    <option value="salaire" size>  1000 €  </option>
+    <option value="salaire" size>  10000 €  </option>
+    <option value="salaire" size>  100000000000 €  </option>
+  </select>
+    <p><label for="year">en quelle année avez-vous suivi le stage afpa ? </label><input type="text" name="year" id="year"></p>
+<textarea name="commentaire" id="commentaire" rows="5" cols="40" placeholder="Vos commentaires..." style="resize:none;overflow-y:scroll";>
+Vos commentaires
+</textarea>
+<p style="font-size:x-large"><b>Merci d'avoir répondu au questionnaire</b></p>
+<form method="post" action="http://bienvu.net/script.php">
+  <input type="submit" value="validez">
+  <input type="submit" value="annulez">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

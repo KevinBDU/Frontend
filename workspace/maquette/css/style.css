@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   flex-flow: column nowrap;
+   height: 100vh;
+}
+
+header {
+    background-color: #7ccdff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 1em;
+    font-size: 2em;
+    color: black; 
+}
+
+
+#logo {
+    justify-self: flex-start;
+    width: 25vmin;
+    min-width: 150px;
+}
+
+#titre {
+    margin: auto;
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 4vmax;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+nav {
+    background-color: #333;
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: solid thin #86BC24;
+}
+
+ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: #333;
+    
+  }
+
+  li a.active {
+    background-color: #86BC24;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #86BC24;
+    border-left: 1px solid #7ccdff;
+    border-right:1px solid #7ccdff;
+  }
+
+    
+main {
+    background-color: #2181BD;
+    display: flex;
+    flex: 1;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+main::before {
+    content: "";
+    display: block;
+    background: url(../img/dev-img.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: anim 0.5s ease-out 1s forwards;
+    transform: scale(0);
+    
+    
+}
+
+article {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    background-color: #333;
+    border: solid thin #86BC24;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: whitesmoke;
+    padding: 20px 20px;
+    width: 90%;
+    height: 70%;
+    max-width: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+@keyframes anim {
+     
+    to {
+        
+        transform: scale(1.50);
+    }
+}
