@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgba(255, 166, 0, 0.39);
+}
+
+nav {
+    float: right;
+    
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: darkorange;
+    font-size: x-large;
+    font-family: Oswald;
+    padding: 10px;
+}
+
+
+main {
+    margin: 0 10px;
+    text-align: justify;
+    width: 750px;
+    font-size: 16px;
+}
+
+article h2 {
+    color: darkorange;
+    font-size: 24px;
+    font-family: Oswald;
+}
+
+article img {
+    float: left;
+    margin-right: 15px;
+}
+
+article a {
+    text-decoration: none;
+    float: right;
+    background-color: darkorange;
+    color: white;
+    padding: 15px;
+}
+
+p.clear {
+    clear: both;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
