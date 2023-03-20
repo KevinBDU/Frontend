@@ -4,35 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/All.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <title>Index</title>
 </head>
 <body>
 <header>
-        <video playsinline autoplay muted loop poster="">
+        <video playsinline autoplay muted loop poster="./img/screen.png">
           <source src="./img/jon-snow-got-live-wallpaper.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-    
-        <a class="logo" href="#"><img class="logo" src="./img/1836295.png" alt="logo"></a>
-        <img id="titre" src="./img/Game-of-Thrones-Logo.png" alt="titre">
+
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Page1</a>
-            <a href="#">Page2</a>
-            <a href="#">Page3</a>
+            <a href="https://www.game-of-thrones.fr/" title="Game of Thrones.fr"><img id="logo" src="./img/1836295.png" alt="logo"></a>
+            <a class="active" href="./index.html">Home</a>
+            <a href="./pages/page1.html">winterfell</a>
+            <a href="./pages/page2.html">kings landing</a>
+            <a href="./pages/page3.html">meereen</a>
         </nav>
+
+        <img id="titre" src="./img/Game-of-Thrones-Logo.png" alt="titre">
 </header>
 
 
     <main>
-        <section>
-
+        <section class="bg-black">
+                <img src="./img/bg1.jpg" alt="Night King">
+                <article class="intro">
+                <h2>Game of Thrones</h2>
+                <p>
+                Sur le continent de Westeros, le roi Robert Baratheon gouverne le Royaume des Sept Couronnes depuis plus de quinze ans, à la suite de la rébellion qu'il a menée contre le « roi fou » Aerys II Targaryen.
+                Jon Arryn, époux de la sœur de Lady Catelyn Stark, Lady Arryn, son guide et principal conseiller, vient de décéder, et le roi part alors dans le nord du royaume demander à son vieil ami Eddard « Ned » Stark de remplacer leur regretté mentor au poste de Main du Roi.<br><br>
+                Ned, seigneur suzerain du Nord depuis Winterfell et de la maison Stark, est peu désireux de quitter ses terres.
+                Mais il accepte à contre-cœur de partir pour la capitale Port-Réal avec ses deux filles, Sansa et Arya. Juste avant leur départ pour le Sud, Bran, l'un des jeunes fils d'Eddard, est poussé de l'une des tours de Winterfell après avoir été témoin de l'union incestueuse de la reine Cersei Lannister et son frère jumeau, Jaime Lannister. Leur frère, Tyrion Lannister, surnommé « le gnome », est alors accusé du crime par Lady Catelyn Stark.
+                </p>
+                </article>
         </section>
-        <section>
 
+        <section class="bg-img">
+          <article>
+            <h2>Le monde selon Game of Thrones</h2>
+            <p>
+                Winterfell, Port-Réal, Westeros… Ces noms vous sont forcément familiers si vous avez suivi la série « Game of Thrones » depuis son lancement et, plus encore, si vous avez lu les livres de George R.R. Martin.
+                Le monde tel qu'il est présenté dans la série et les livres de George R.R. Martin n'a pas de limites. On sait simplement qu'il se compose principalement de trois continents : Westeros, Essos et Sothoryos, seuls les deux premiers étant réellement explorés par les personnages du récit. Plusieurs îles et archipels sont également mentionnés, séparés des terres continentales par des mers.
+            </p><a class="button" href="#capitales">Découvrir</a>
+          </article>
+            <img src="./img/map1.jpg" alt="Map">   
+        </section >
+        <section id="capitales" class="bg-black wrap h-auto">
+            <h2>Découvrez les capitales de Westeros et de Essos</h2>
+            <article class="card">
+                <picture>
+                    <a href="./pages/page1.html"><img src="./img/winterfell.jpg" alt="winterfell"></a>
+                </picture>
+                <h3>Winterfell</h3>
+            </article>
+            <article class="card">
+                <picture>
+                    <a href="./pages/page2.html"><img src="./img/kings_landing_miniature.jpg" alt="Kings Langing"></a>
+                </picture>
+                <h3>King's Landing</h3>
+            </article>
+            <article class="card">
+                <picture>
+                    <a href="./pages/page3.html"><img src="./img/Meereen.jpg" alt="Meereen"></a>
+                </picture>
+                <h3>Meereen</h3>
+            </article>
         </section>
     </main>
+    <footer>
+        <h5>Sources</h5>
+        <ul>
+            <li><a href="https://gameofthrones.fandom.com/fr/wiki/Game_of_Thrones">Game of Thrones Wiki</a></li>
+            <li><a href="https://www.leparisien.fr/culture-loisirs/series/game-of-thrones-petit-cours-de-geographie-pour-s-y-retrouver-a-westeros-09-04-2019-8049381.php">Le Parisien</a></li>
+        </ul>
+        <p>Design by The King of The North ©</p>
+    </footer>
 </body>
 </html>
