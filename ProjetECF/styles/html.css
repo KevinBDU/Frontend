@@ -1,4 +1,4 @@
-.color1 h2 {
+.intro h2 {
   color: goldenrod;
 }
 
@@ -12,16 +12,6 @@
 
 .bg3 {
   background-image: url(../img/meereenbg.jpg);
-}
-
-.bg-img::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: "";
-    display: block;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.125);
 }
 
 #stark, #targaryen, #throne {
@@ -69,14 +59,13 @@
 }
 
 table {
-    border-spacing: 1;
     border-collapse: collapse;
     background: white;
     border-radius: 6px;
     overflow: auto;
-    max-width: 80%;
-    width: 100%;
-    height: 80%;
+    width: 80%;
+    height: 50%;
+    
     margin: 0 auto;
     position: relative;
     text-align: center;
@@ -111,7 +100,7 @@ table {
     border: 0;
   }
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 1024px) {
     table {
       display: block;
       margin: 20px 0;

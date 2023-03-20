@@ -1,0 +1,28 @@
+Bondelu Kévin
+
+Liste selecteurs :
+
+-#titre => id image titre
+-#logo => id image logo dans header
+-#stark, #targaryen, #throne => id image dans article intro
+-nav a => links navbar
+-nav a.active => page active
+-nav a:hover => effet de hover sur les links de navbar
+-nav a:not(:first-child)::after => effet de hover ne s'appliquent pas sur #logo
+-nav a:not(.active):hover::after => effet hover ne s'applique pas sur la page active
+-nav a, nav a:after => transition de l'effet hover
+-.intro => classe de l'article de la 1ère section
+-.bg-black => classe de la 1ère section (fond noir)
+-.bg-img => classe de la 2ème section (fond avec image)
+-.bg-img::before => effet de blur sur l'image de fond
+-.bg-1,bg2,bg3 => image de fond différente
+-.button => classe pour links d'apparence boutton
+-.button:hover => effet hover sur le bouton	
+-.card => classe des cartes dans index
+-.card picture::after => effet pour rendre carré les card
+-picture img:hover => effet hover sur les cards avec transition
+-.wrap => classe flex-wrap: wrap;
+-.h-auto => classe height: auto;
+-.table-container => classe section avec tableaux
+-.table-p1,p2,p3 => classe des tableaux 1, 2 et 3 
+-@media screen and (max-width: 1024px) => media queries pour resolution > 1024px, passage en flex-flow: column; & table en display: block avc thead à gauche
