@@ -22,7 +22,7 @@
 
 
 .table-container {
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
 }
 
@@ -64,8 +64,7 @@ table {
     border-radius: 6px;
     overflow: auto;
     width: 80%;
-    height: 50%;
-    
+    height: auto;
     margin: 0 auto;
     position: relative;
     text-align: center;
@@ -79,7 +78,7 @@ table {
 
   table td, table th {
     padding-left: 8px;
-    min-width: 10vmax;
+    min-width: 10vw;
   }
 
   table thead tr {
@@ -88,7 +87,7 @@ table {
   }
 
   table tbody tr {
-    height: 5vw;
+    height: 12vh;
     border-bottom: 1px solid lightblue;
   }
 
