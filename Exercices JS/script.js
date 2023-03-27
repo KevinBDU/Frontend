@@ -231,17 +231,68 @@ console.log(tableMulti(7)); */
 // Exercice 3 //
 
 // function compteur(phrase, lettre) {
-//     var phrase = "";
-//     var lettre = "";
+//     var phrase;
+//     var lettre;
 //     var count = 0;
 
 
-//    for (lettre in phrase) {
-//     count++;
-//    }
+//    for (let i = 0; i < phrase.length; i++) {
+//     if (phrase[i] == lettre) {
+//         count++;
+//     }
+// }
 
 //    return count;
    
 // }
-// compteur("bonjour", "o");
-// console.log(compteur("bonjour", "o"));
+// console.log(compteur("test", "t"));
+
+
+
+
+
+/* ######################### Exercices Tableaux ########################## */ 
+
+// Exercice 1 //
+
+// var saisi = "";
+// var tableauLength = parseInt(prompt("Saisir longueur tableau :"));
+// var table = [];
+
+// for (let i = 0; i < tableauLength; i++) {
+//     saisi = prompt("Saisir valeur :");
+//     table.push(saisi);
+// }
+
+// console.log(table);
+
+/* Exercice 2 */
+
+function GetInteger(int) {
+    int = parseInt(prompt("Saisir valeur :"));
+}
+
+function InitTab(tabLength) {
+    var tab = [];
+    tabLength = prompt("Saisir longueur tableau :");    
+}
+
+function SaisieTab(saisie) {
+     saisie = "";
+
+     for (let i = 0; i < tab.length; i++) {
+             saisie = prompt("Saisir valeur :");
+             tab.push(saisi);
+     }
+
+}
+
+function AfficheTab() {
+    return console.log(tab);
+}
+
+function RechercheTab(rang) {
+    rang = prompt("Saisir rang :");
+
+
+}
