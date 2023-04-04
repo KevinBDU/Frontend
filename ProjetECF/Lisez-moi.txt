@@ -21,8 +21,6 @@ Liste selecteurs :
 -.card => classe des cartes dans index
 -.card picture::after => effet pour rendre carré les card
 -picture img:hover => effet hover sur les cards avec transition
--.wrap => classe flex-wrap: wrap;
--.h-auto => classe height: auto;
 -.table-container => classe section avec tableaux
 -.table-p1,p2,p3 => classe des tableaux 1, 2 et 3 
--@media screen and (max-width: 1024px) => media queries pour resolution > 1024px, passage en flex-flow: column; & table en display: block avc thead à gauche
+-@media screen and (max-width: 1024px) => media queries pour resolution > 1024px, passage en flex-flow: column; & table en display: block avec thead à gauche

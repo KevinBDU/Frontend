@@ -231,8 +231,8 @@ console.log(tableMulti(7)); */
 // Exercice 3 //
 
 // function compteur(phrase, lettre) {
-//     var phrase = "";
-//     var lettre = "";
+//     var phrase;
+//     var lettre;
 //     var count = 0;
 
 
