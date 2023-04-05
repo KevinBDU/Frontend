@@ -1,0 +1,42 @@
+{
+    "Name": "Chez Mario et Luigi",
+    "Slogan": "Pizzaiollo de père en fils",
+    "Pizza": [
+        {
+            "Nom": "La cheese",
+            "Image": "https://assets.afcdn.com/recipe/20200219/107901_w1024h1024c1cx4330cy2886.jpg",
+            "Prix": "12 euros",
+            "Ingredients": [
+                "Feta",
+                "bleu",
+                "Mozza",
+                "Raclette",
+                "camembert"
+            ]
+        },
+        {
+            "Nom": "La reine",
+            "Image": "https://img.cuisineaz.com/1024x768/2015/05/26/i7828-pizza-au-poulet-et-fromage.jpg",
+            "Prix": "15 euros",
+            "Ingredients": [
+                "Poulet",
+                "bleu",
+                "Mozza",
+                "jambon",
+                "olive",
+                "fromage"
+            ]
+        },
+        {
+            "Nom": "La hawaienne",
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSojuf19ImFDvCBgGskXqbYOtPgWjxxA7sZTnu5KMrnZxKqQ9kdz8wPGIxVV299fyybUY0&usqp=CAU",
+            "Prix": "10 euros",
+            "Ingredients": [
+                "mozza",
+                "ananas",
+                "mangue",
+                "olive"
+            ]
+        }
+    ]
+}

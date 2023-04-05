@@ -236,15 +236,24 @@ console.log(tableMulti(7)); */
 //     var count = 0;
 
 
+<<<<<<< HEAD
 //    for (let i = 0; i < phrase.length; i++) {
 //     if (phrase[i] == lettre) {
 //         count++;
 //     }
 // }
+=======
+//    for (let i = 0; i < phrase.length; i++) 
+   
+//    if (phrase[i] == lettre) {
+//     count++;
+//    }
+>>>>>>> 7ec963d618a7794ab73d668042d547786cec31e5
 
 //    return count;
    
 // }
+<<<<<<< HEAD
 // console.log(compteur("test", "t"));
 
 
@@ -296,3 +305,102 @@ function RechercheTab(rang) {
 
 
 }
+=======
+
+/* Exercice 4  
+
+function compteur(phrase, lettre) {
+    var phrase = "";
+    var lettre = "";
+    var count = 0;
+
+
+   for (let i = 0; i < phrase.length; i++) 
+   
+   if (phrase[i] == lettre) {
+    count++;
+   }
+
+   console.log(phrase[i]);
+} */
+
+// Exercice 5 //
+
+// function strtok(str1, str2, n) {
+//     str1 = prompt("Entrez une phrase :");
+//     str2 = "";
+//     n;
+
+//     return str1.split(str2)[n];
+// }
+
+/* #################### Exercices Tableaux ########################## */
+
+// Exercice 1 //
+
+// var tab = [];
+// var longueur = parseInt(prompt("Saisir longueur du tableau :"));
+
+// for (let i = 0; i < longueur; i++) {
+//     elements = prompt("Saisir un element :");
+//     tab.push(elements);
+// }
+// console.log(tab);
+
+/* Exercice 2 
+
+function GetInteger(promptxt = "Saisir un entier :") {
+    return parseInt(prompt(promptxt));
+}
+
+function InitTab() {
+    tab = [];
+
+    return tab.length = GetInteger("Saisir longueur tableau :");
+}
+
+function SaisieTab() {
+    for (let i = 0; i < tab.length; i++) {
+        tab[i] = GetInteger("Entrez valeurs des postes :");
+    }
+}
+
+function AfficheTab() {
+    console.log(tab);
+}
+
+function RechercheTab() {
+    index = GetInteger("Saisir le rang du poste :");
+
+    console.log(tab[index]);
+}
+
+function InfoTab() {
+    var max = 0;
+    var moy = 0;
+    var somme = 0;
+    var count = 0;
+
+    for (let i = 0; i < tab.length; i++) {  
+        somme += tab[i];
+        count++;
+
+        if (max < tab[i]) 
+        {
+            max = tab[i];
+        }
+    }
+
+    moy = somme / count;
+
+    console.log(max);
+    console.log(moy);
+}
+
+InitTab();
+SaisieTab();
+AfficheTab();
+RechercheTab();
+InfoTab(); */
+
+>>>>>>> 7ec963d618a7794ab73d668042d547786cec31e5
