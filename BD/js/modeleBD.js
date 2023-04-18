@@ -18,12 +18,18 @@ jQuery(document).ready(function ($) {
   // console.log(album.titre+" "+serie.nom+" "+auteur.nom);
 
   // Liste des albums
+  
     albums.forEach((album) => {
-    tableRow = document.createElement("tr");
+    tableRow = document.createElement("div");
+    $(tableRow).addClass("border");
 
     serie = series.get(album.idSerie);
     auteur = auteurs.get(album.idAuteur);
-    tableRow.innerHTML = `<img src="images/noComicsMini.jpeg" id="albumMini"> ${album.titre} N°${album.numero}; Série: ${serie.nom}; Auteur: ${auteur.nom} <input type="button" value="Ajouter">`;
+    
+    var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
+    nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
+    
+    tableRow.innerHTML = `<img src="${srcAlbumMini + nomFic + ".jpg"}" id="albumMini"> ${album.titre} N°${album.numero}; Série: ${serie.nom}; Auteur: ${auteur.nom} <input type="button" value="Ajouter">`;
     $("#table").append(tableRow);
     
   });
