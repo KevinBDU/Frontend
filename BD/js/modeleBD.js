@@ -5,114 +5,59 @@ jQuery(document).ready(function ($) {
   const srcAlbumMini = "albumsMini/"; // emplacement des images des albums en petit
   const srcAlbum = "albums/"; // emplacement des images des albums en grand
 
-  const myModal = $("#myModal");
-  window.addEventListener("load", Load);
+  var albumList = new Array();
+  var authorList = new Array();
+  var serieList = new Array();
+  var titreList = new Array();
 
   // Lecture d'un album
-  // function modalAlbum() {
-  //   console.log("Lecture d'un album");
-  //   var album = albums.get("3");
-  //   var serie = series.get(album.idSerie);
-  //   var auteur = auteurs.get(album.idAuteur);
-  //   console.log(album.titre + " " + serie.nom + " " + auteur.nom);
-  // }
+  // console.log("Lecture d'un album");
+  // var album = albums.get("5");
+  // var serie = series.get(album.idSerie);
+  // var auteur = auteurs.get(album.idAuteur);
+  // console.log(album.titre+" "+serie.nom+" "+auteur.nom);
 
   // Liste des albums
-  // Creation d'une liste d'albums
-  function Load() {
+
     albums.forEach((album) => {
-      tableRow = document.createElement("div");
-      $(tableRow).addClass("border");
+    tableRow = document.createElement("div");
+    $(tableRow).addClass("border");
 
-      serie = series.get(album.idSerie);
-      auteur = auteurs.get(album.idAuteur);
+    serie = series.get(album.idSerie);
+    auteur = auteurs.get(album.idAuteur);
+    
+    var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
+    nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
+    
+    tableRow.innerHTML = `<img src="${srcAlbumMini + nomFic + ".jpg"}" id="albumMini"> ${album.titre} N°${album.numero}; Série: ${serie.nom}; Auteur: ${auteur.nom} <input type="button" value="Ajouter">`;
+    $("#table").append(tableRow);
+    
+  });
+  
 
-      var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
-      nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
 
-      tableRow.innerHTML = `<img src="${
-        srcAlbumMini + nomFic + ".jpg"
-      }" id="albumMini"> ${album.titre} N°${album.numero}; Série: ${
-        serie.nom
-      }; Auteur: ${auteur.nom} <input type="button" value="Ajouter">`;
-      $("#liste").append(tableRow);
-    });
-  }
 
-  // $("#liste").click(() => {
-  //   alert("test");
-  // });
+  // console.log("Liste des albums par série");
+  // for(var [idSerie, serie] of series.entries()) {
+  //     // Recherche des albums de la série
+  //     for (var [idAlbum, album] of albums.entries()) {
+  //         if (album.idSerie == idSerie) {
+  //             console.log(serie.nom+", Album N°"+album.numero+" "+album.titre+", Auteur:"+auteurs.get(album.idAuteur).nom);
+  //         }
+  //     }
 
-  // Tri par séries
-  function ListBySerie() {
-    var SerieList = new Array();
+  // }
 
-    for (var [idSerie, serie] of series.entries()) {
-      // Recherche des albums de la série
-      for (var [idAlbum, album] of albums.entries()) {
-        if (album.idSerie == idSerie) {
-          console.log(
-            serie.nom +
-              ", Album N°" +
-              album.numero +
-              " " +
-              album.titre +
-              ", Auteur:" +
-              auteurs.get(album.idAuteur).nom
-          );
-        }
-      }
-    }
-  }
-  $("#inlineRadio3").focus(ListBySerie);
+  // console.log("Liste des albums par auteur");
+  // for(var [idAuteur, auteur] of auteurs.entries()) {
+  //     // Recherche des albums de l'auteur
+  //     for (var [idAlbum, album] of albums.entries()) {
+  //         if (album.idAuteur == idAuteur) {
+  //             console.log(auteur.nom+", Album N°"+album.numero+" "+album.titre+", Série:"+series.get(album.idSerie).nom);
+  //         }
+  //     }
 
-  function ListByAuthor() {
-    var AuthorList = new Array();
-
-    for (var [idAuteur, auteur] of auteurs.entries()) {
-      // Recherche des albums de l'auteur
-      for (var [idAlbum, album] of albums.entries()) {
-        var ListByAuthor = 
-        if (album.idAuteur == idAuteur && ) {
-          AuthorList.push(auteur.nom);
-          console.log(AuthorList);
-          // console.log(
-          //   auteur.nom +
-          //     ", Album N°" +
-          //     album.numero +
-          //     " " +
-          //     album.titre +
-          //     ", Série:" +
-          //     series.get(album.idSerie).nom
-          //);
-        }
-      }
-    }
-  }
-  $("#inlineRadio2").focus(ListByAuthor);
-
-  function search() {
-    var Search = $("#search");
-
-  }
-
-  // <!-- chatGPT -->
-  // var form = $("#form");
-  // var searchInput = form.querySelector("#search");
-  // var Albums = $(albums);
-  // var searchValue = searchInput.value.toLowerCase();
-
-  // form.addEventListener('submit', (e) => {
-  //   e.preventDefault();
-  // });
-  // Albums.forEach((album) => {
-  //   var title = album.titre.textContent.toLowerCase();
-  //   if(title.includes(searchValue)) {
-  //     album.style.display = "block";
-  //   } else {
-  //     album.style.display = "none";
-  //   }
-  // });
+  // }
 
   // Affichage des BD
   var txtSerie = document.getElementById("serie");
