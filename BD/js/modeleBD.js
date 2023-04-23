@@ -7,6 +7,7 @@ jQuery(document).ready(function ($) {
 
   // Affichage des albums au chargement de la page
   window.addEventListener("load", display([], true));
+  // On empêche le comprotement par default du formulaire à l'envoie
   $("#form").submit((e) => e.preventDefault());
 
   // Lecture d'un album
@@ -16,9 +17,7 @@ jQuery(document).ready(function ($) {
   // var auteur = auteurs.get(album.idAuteur);
   // console.log(album.titre+" "+serie.nom+" "+auteur.nom);
 
-  // Liste des albums
-  // Creation des éléments album de la liste
-
+  // Methode qui retourne un objet pour factoriser le code
   function albumDetails(album) {
     var serie = series.get(album.idSerie);
     var auteur = auteurs.get(album.idAuteur);
@@ -33,6 +32,9 @@ jQuery(document).ready(function ($) {
     };
   }
 
+  // Liste des albums
+  // Creation des éléments album de la liste
+  // On passe en parametre un tableau vide et un booleen pour éviter d'avoir à afficher tout les albums à chaque recherche
   function display(elt = [], showAll = false) {
     $("#liste").empty();
 
@@ -42,7 +44,7 @@ jQuery(document).ready(function ($) {
       $(listElt).attr("id", idAlbum);
 
       var { serie, auteur, nomFic } = albumDetails(album);
-
+      // On vérifie que les id de notre tableau sont présent dans albums si c' est le cas on l'ajoute à la liste et on l'affiche
       if (showAll || elt.includes(idAlbum)) {
         listElt.innerHTML = `<img src="${
           srcAlbumMini + nomFic + ".jpg"
@@ -54,11 +56,11 @@ jQuery(document).ready(function ($) {
 
         $("#liste").append(listElt);
       }
-    }
+    } // On recupère l'id du parent et on execute la function addToCart au click
     $(".add").on("click", function () {
       addToCart($(this).parent().attr("id"));
     });
-
+    // Ajout écouteur d'évènement qui au click va ouvrir une modal avec les détails de l'album selectionné grace à son id
     $(".albumMini").on("click", function () {
       $("#myModal").modal();
       const album = albums.get($(this).parent().attr("id"));
@@ -117,7 +119,7 @@ jQuery(document).ready(function ($) {
     display(idArray);
   }
 
-  $("#search").click(() => recherche());
+  $("#search").click(recherche);
   $("#recherche").on("input", recherche);
 
   let cart = [];
@@ -125,11 +127,12 @@ jQuery(document).ready(function ($) {
   function addToCart(idAlbum) {
     // Ajoutez un album au panier
     const album = albums.get(idAlbum); // Récupérez l'album à partir de son id
+    // Créez un objet représentant l'album
     const cartItem = {
-      // Créez un objet représentant l'album
       quantity: 1, // Ajoutez une propriété quantity
-      id: idAlbum,
+      id: idAlbum, // Ajout d'une propriété id, correspondant à l'id de l'album
     };
+    // On vérifie si l'id est déja présent dans le tableau avec une var qui
     var cartIndex = cart.findIndex((item) => item.id == idAlbum);
     if (cartIndex == -1) {
       cart.push(cartItem); // Ajoutez l'objet à la fin du tableau cart
@@ -137,13 +140,12 @@ jQuery(document).ready(function ($) {
     // Mettez à jour l'affichage du panier
     updateCartDisplay();
   }
-
+  // Maj affichage du panier
   function updateCartDisplay() {
     const $cartItems = $("#cart ul");
     $cartItems.empty();
 
     let total = 0;
-    console.log(cart);
     cart.forEach((item, index) => {
       const album = albums.get(item.id);
       const auteur = auteurs.get(album.idAuteur);
@@ -157,10 +159,10 @@ jQuery(document).ready(function ($) {
         )
         .data("index", index);
       $cartItems.append(li);
-      total += parseFloat(album.prix) * item.quantity;
+      total += parseFloat(album.prix) * item.quantity; // calcul du total
     });
 
-    $(".total").text(total.toFixed(2));
+    $(".total").text(total.toFixed(2)); // affichage du total
   }
 
   $(document)
@@ -201,50 +203,6 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  // Tri par série
-  // function listBySerie() {
-  //   console.log("Liste des albums par série");
-  //   for (var [idSerie, serie] of series.entries()) {
-  //     // Recherche des albums de la série
-  //     for (var [idAlbum, album] of albums.entries()) {
-  //       if (album.idSerie == idSerie) {
-  //         console.log(
-  //           serie.nom +
-  //             ", Album N°" +
-  //             album.numero +
-  //             " " +
-  //             album.titre +
-  //             ", Auteur:" +
-  //             auteurs.get(album.idAuteur).nom
-  //         );
-  //       }
-  //     }
-  //   }
-  // }
-  // $("#inlineRadio3").focus(listBySerie);
-
-  // Tri par auteur
-  // function listByAuteur() {
-  //   console.log("Liste des albums par auteur");
-  //   for (var [idAuteur, auteur] of auteurs.entries()) {
-  //     // Recherche des albums de l'auteur
-  //     for (var [idAlbum, album] of albums.entries()) {
-  //       if (album.idAuteur == idAuteur) {
-  //         console.log(
-  //           auteur.nom +
-  //             ", Album N°" +
-  //             album.numero +
-  //             " " +
-  //             album.titre +
-  //             ", Série:" +
-  //             series.get(album.idSerie).nom
-  //         );
-  //       }
-  //     }
-  //   }
-  // }
-  // $("#inlineRadio2").focus(listByAuteur);
-
   // imgAlbum.addEventListener("error", function () {
   //   prbImg(this);
   // });
@@ -257,56 +215,6 @@ jQuery(document).ready(function ($) {
   // id.addEventListener("change", function () {
   //   getAlbum(this);
   // });
-
-  /**
-   * Récupération de l'album par son id et appel de
-   * la fonction d'affichage
-   *
-   * @param {number} num
-   */
-  function getAlbum(num) {
-    var album = albums.get(num.value);
-
-    // on initialise un nouveau tableau (qui ne contient que les clés des albums... la longueur sera la meme que la longueur de la map albums)
-    var albumsKeys = albums.keys();
-    var albumKey;
-
-    //on refait une boucle sur la map des albums
-    albums.forEach((album2) => {
-      // sur le tableau des clés, la fonction next().value va donner la clé suivante
-      // ainsi vu qu'on est dans une boucle sur les albums, à chaque passage
-      // la valeur va changer
-      albumKey = albumsKeys.next().value;
-
-      //on compare l'album de la boucle avec l'album que l'on veut afficher
-      if (album.titre == album2.titre) {
-        console.log(" Clé de l'album " + albumKey);
-        console.log(
-          "La valeur de num passé en paramètre de la fonction est " + num
-        );
-
-        // on peut ainsi adapter la chose pour mettre un id dans notre balise
-        // que ce soit le bouton ajouter au panier (par exemple id="btn-" + albumKey )
-        // ou notre card pr l'affichage de la modal à qui on va passer un paramètre à savoir l'albumKey
-      }
-    });
-
-    var serie = series.get(album.idSerie);
-    var auteur = auteurs.get(album.idAuteur);
-
-    var nomFic = serie.nom + "-" + album.numero + "-" + album.titre;
-
-    // Utilisation d'une expression régulière pour supprimer
-    // les caractères non autorisés dans les noms de fichiers : '!?.":$
-    nomFic = nomFic.replace(/'|!|\?|\.|"|:|\$/g, "");
-
-    // afficheAlbums(
-    //   $("#albumMini"),
-    //   $("#album"),
-    //   srcAlbumMini + nomFic + ".jpg",
-    //   srcAlbum + nomFic + ".jpg"
-    // );
-  }
 
   /**
    * Affichage des images, les effets sont chainés et traités
