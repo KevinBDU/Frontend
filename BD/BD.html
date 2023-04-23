@@ -12,46 +12,49 @@
 </head>
 
 <body>
-    <div class="container">
+ <div class="container">
         <h1>Liste des BD</h1>
 
         <form action="" id="form">
           <label for="recherche">Recherche</label>
           <input type="text" id="recherche">
-          <input type="submit" value="Search" id="search">
+          <input type="button" value="Search" id="search">
         </form>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="titre" checked="checked">
             <label class="form-check-label" for="inlineRadio1">Titre</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="auteur">
             <label class="form-check-label" for="inlineRadio2">Auteur</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="serie">
             <label class="form-check-label" for="inlineRadio3">Série</label>
           </div>
 
-          <!-- Tableau -->
+          <!-- Liste Albums -->
           <div id="liste">
           </div>
     
+          <div id="cart">
+            <h2 style="font-family: fantasy;">Cart</h2>
+            <ul id="cart-items"></ul>
+            <button id="pay">Buy : <span class="total">0.00</span> €</button>
   
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" >
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="ModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5" id="ModalLabel">Détail de l'album</h1>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
         </div>
-        <div class="modal-body">
-          ...
+        <div class="modal-body" id="albumContent">
+         
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -93,7 +96,7 @@
 
         </div> -->
 
-    </div>
+ </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
